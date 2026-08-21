@@ -1,0 +1,68 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "env": {
+    "es2020": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": ["@typescript-eslint", "import", "react-hooks"],
+  "rules": {
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "import/no-restricted-paths": [
+      "error",
+      {
+        "zones": [
+          {
+            "target": "packages/core",
+            "from": "packages/",
+            "message": "@haulmer/core has no upstream dependencies (foundational layer)"
+          },
+          {
+            "target": "packages/payments",
+            "from": "apps/",
+            "message": "Domain packages should not import from apps/ (inversion of control)"
+          },
+          {
+            "target": "packages/identity",
+            "from": "packages/payments",
+            "message": "@haulmer/identity should not depend on @haulmer/payments"
+          },
+          {
+            "target": "packages/banking",
+            "from": "packages/payments",
+            "message": "@haulmer/banking should not depend on @haulmer/payments"
+          }
+        ]
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ]
+  },
+  "ignorePatterns": [
+    "node_modules",
+    "dist",
+    "build",
+    "coverage",
+    "*.config.js",
+    "ios",
+    "android"
+  ]
+}

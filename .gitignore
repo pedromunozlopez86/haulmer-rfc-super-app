@@ -1,0 +1,47 @@
+
+# Dependencies
+node_modules/
+vendor/
+**/Pods/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Build and coverage output
+dist/
+build/
+coverage/
+.cache/
+.next/
+**/.gradle/
+**/.cxx/
+DerivedData/
+
+# Android local config
+local.properties
+*.keystore
+*.jks
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDE and OS files
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+**/.xcode.env.local
+**/xcuserdata/
+**/*.xcuserstate
+
+# Temporary files
+tmp/
+temp/
+*.tmp

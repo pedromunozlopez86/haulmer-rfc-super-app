@@ -1,0 +1,22 @@
+{
+  "name": "@haulmer/payments",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/index.ts",
+  "peerDependencies": {
+    "react": "19.2.3",
+    "react-native": "0.87.0"
+  },
+  "dependencies": {
+    "@haulmer/core": "*"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "react": "19.2.3",
+    "react-native": "0.87.0"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "jest"
+  }
+}

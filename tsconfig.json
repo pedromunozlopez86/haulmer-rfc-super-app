@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "target": "ES2020",
+    "module": "ESNext",
+    "jsx": "react-native",
+    "ignoreDeprecations": "6.0",
+    "types": ["jest"],
+    "baseUrl": ".",
+    "paths": {
+      "@haulmer/core": ["packages/core/src/index.ts"],
+      "@haulmer/core/*": ["packages/core/src/*"],
+      "@haulmer/payments": ["packages/payments/src/index.ts"],
+      "@haulmer/payments/*": ["packages/payments/src/*"]
+    }
+  },
+  "include": ["packages/*/src/**/*", "apps/*/**/*.ts", "apps/*/**/*.tsx"],
+  "exclude": ["node_modules"]
+}
